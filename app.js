@@ -28,8 +28,12 @@ app.get('/students?search=name', (req, res) => {
 })
 app.get('/students/:studentId', (req, res) => {
     /* GET a user by their id */
-    let id = req.params.studnetId;
-    console.log(id)
+    let id = req.params.studentId;
+    //res.send(id.slice().filter(student => student.id === id)[0])
+    res.send("Current ID: " + id)
+    // res.send if it fails try id.grade.toString() --- a solid number it trys to interpret as a error code
+    res.send(id.grade)
+    //console.log(id)
     // example for multiple
     // app.get('/:id/:var2', (req, res) => {
     // let var2 = req.params.var2
@@ -37,7 +41,7 @@ app.get('/students/:studentId', (req, res) => {
 })
 app.get('/grades/:studentId', (req, res) => {
     /* GET a user by their id */
-    let id = req.params.studnetId;
+    let id = req.params.studentId;
     console.log(id)
     // example for multiple
     // app.get('/:id/:var2', (req, res) => {
